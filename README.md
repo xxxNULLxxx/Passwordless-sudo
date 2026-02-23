@@ -26,14 +26,15 @@ When enabled, it writes a validated rule to `/etc/sudoers.d/passwordless-sudo` t
 
 The menu bar icon shows a **closed lock** (`🔒`) when sudo requires a password, and an **open lock** (`🔓`) when passwordless sudo is active.
 
-Click the icon to open the menu, where a color-coded dot shows the exact state:
+Click the icon to open the menu — the status label underneath the title tells you the exact state:
 
-| Dot | Label | Meaning |
-|-----|-------|---------|
-| 🟢 Green | Enabled | Passwordless sudo is active (managed by this app) |
-| ⚫ Gray | Disabled | Password is required for sudo (normal state) |
-| 🟠 Orange | Enabled (External) | Passwordless sudo is active but set by another rule — this app won't touch it |
-| 🔴 Red | Error / Not Permitted | Something went wrong, or your account isn't in the sudoers file at all |
+| Label | Meaning |
+|-------|---------|
+| Enabled | Passwordless sudo is active (managed by this app) |
+| Disabled | Password is required for sudo (normal state) |
+| Enabled (External) | Passwordless sudo is active but set by another rule — this app won't touch it |
+| Error | Something went wrong |
+| Not Permitted | Your account isn't in the sudoers file at all |
 
 ---
 
