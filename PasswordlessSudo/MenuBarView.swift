@@ -10,11 +10,8 @@ struct MenuBarView: View {
 
             Divider()
 
-            HStack {
-                statusDot
-                Text(sudoManager.status.label)
-                    .font(.subheadline)
-            }
+            Text(sudoManager.status.label)
+                .font(.subheadline)
 
             if case .error(let message) = sudoManager.status {
                 Text(message)
@@ -40,24 +37,6 @@ struct MenuBarView: View {
             .keyboardShortcut("q")
         }
         .padding(4)
-    }
-
-    @ViewBuilder
-    private var statusDot: some View {
-        Circle()
-            .fill(statusColor)
-            .frame(width: 8, height: 8)
-    }
-
-    private var statusColor: Color {
-        switch sudoManager.status {
-        case .enabled: return .green
-        case .disabled: return .secondary
-        case .enabledExternal: return .orange
-        case .error: return .red
-        case .notPermitted: return .red
-        case .unknown: return .secondary
-        }
     }
 
     @ViewBuilder
